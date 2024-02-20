@@ -15,10 +15,10 @@ const openai = new OpenAIApi(configuration)
 
 
 
-const chatGpt = async( promptMsg ) => {
+const chatGpt = async (promptMsg) => {
 
   let prompt = 'Resuma el siguiente mensaje que me han enviado en una o dos frases: '
-  
+
   prompt = prompt + promptMsg
 
   const apiRequestBody = {
@@ -27,7 +27,7 @@ const chatGpt = async( promptMsg ) => {
     temperature: 0,
   }
   const completion = await openai.createChatCompletion(apiRequestBody)
-  
+
   return completion.data.choices[0].message.content
 
 }

@@ -18,7 +18,7 @@ const saveAudioFile = ( audioData ) => {
 }
 
 const delAduioFile = () => {
-  fs.unlink('audio.ogg')
+  fs.promises.unlink('audio.ogg')
   .then(() => {
     console.log('Archivo eliminado');
   })
